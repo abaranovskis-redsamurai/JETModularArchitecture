@@ -1,0 +1,51 @@
+<!--
+ Copyright (c) 2014, 2017, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+-->
+<div class="oj-hybrid-padding">
+    <div id='fragment-container'>
+        <button id="bt1"  data-bind="click: addGroupValue,
+                                             ojComponent: {
+                                                 component:'ojButton', 
+                                                 label: 'Add Group E'
+                                        }">
+        </button>
+        <button id="bt2"  data-bind="click: removeGroupValue,
+                                             ojComponent: {
+                                                 component:'ojButton', 
+                                                 label: 'Remove Group E'
+                                        }">
+        </button>
+        <div id="barChart" data-bind="ojComponent: {
+                                          component: 'ojChart',
+                                          type: 'bar',
+                                          orientation: orientationValue,
+                                          stack: stackValue,
+                                          series: barSeriesValue,
+                                          groups: barGroupsValue,
+                                          animationOnDisplay: 'auto',
+                                          animationOnDataChange: 'auto',
+                                          hoverBehavior: 'dim'
+                                      }" style="width:100%;height:400px;">
+        </div>
+        <div class="oj-panel oj-margin">
+            <h3 class="oj-header-border" data-bind="text: 'Customers'"></h3> 
+            <br/>
+            <table id="t1" summary="Customers" aria-label="Customers"
+                   data-bind="ojComponent: {component: 'ojTable', 
+                                        data: datasource,
+                                        rootAttributes: {style:'width: 100%; height:100%;'},
+                                        columns: [{headerText: 'Customer', 
+                                                   field: 'Customer',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Country', 
+                                                   field: 'Country',
+                                                   sortable: 'enabled'},
+                                                  {headerText: 'Percent', 
+                                                   field: 'Percent',
+                                                   sortable: 'enabled'}]
+                                        }">
+            </table>
+        </div>
+    </div>
+</div>
