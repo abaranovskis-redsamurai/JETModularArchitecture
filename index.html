@@ -26,7 +26,7 @@
   ***************************** IMPORTANT INFORMATION ************************************ -->
 <html lang="en-us">
   <head>
-    <title>Oracle JET Starter Template - Web Nav Drawer</title>
+    <title>JET</title>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -66,7 +66,7 @@
       <div id="navDrawer" class="oj-contrast-marker oj-web-applayout-offcanvas oj-offcanvas-start">
         <div role="navigation" data-bind="click: toggleDrawer, ojComponent: {component: 'ojNavigationList',
           navigationLevel: 'application', item: {template: 'navTemplate'}, data: navDataSource,
-          selection: router.stateId, edge: 'start'}">
+          beforeSelect: selectHandler, selection: selection(), edge: 'start'}">
         </div>
       </div>
       <div id="pageContent" class="oj-web-applayout-page">
@@ -111,7 +111,7 @@
             <div data-bind="ojComponent: {component: 'ojNavigationList',
               navigationLevel: 'application',
               item: {template: 'navTemplate'}, data: navDataSource,
-              selection: router.stateId, edge: 'top'}"
+              beforeSelect: selectHandler, selection: selection(), edge: 'top'}"
               class="oj-web-applayout-navbar oj-sm-only-hide oj-md-condense oj-md-justify-content-flex-end">
             </div>
           </div>

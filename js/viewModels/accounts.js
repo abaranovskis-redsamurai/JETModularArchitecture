@@ -3,34 +3,13 @@
  * The Universal Permissive License (UPL), Version 1.0
  */
 /*
- * Your dashboard ViewModel code goes here
+ * Your about ViewModel code goes here
  */
-define(['ojs/ojcore', 'knockout', 'viewModels/helpers/dashboardChartHelper', 'viewModels/helpers/dashboardTableHelper', 'jquery',
-        'ojs/ojchart', 'ojs/ojbutton', 'ojs/ojtable'],
- function(oj, ko, dashboardChartHelper, dashboardTableHelper) {
+define(['ojs/ojcore', 'knockout', 'jquery'],
+ function(oj, ko, $) {
   
-    function DashboardViewModel() {
+    function AccountsViewModel() {
       var self = this;
-      
-      self.stackValue = dashboardChartHelper.stackValue;
-      self.orientationValue = dashboardChartHelper.orientationValue;
-      self.barSeriesValue = dashboardChartHelper.barSeriesValue;
-      self.barGroupsValue = dashboardChartHelper.barGroupsValue;
-      
-      self.datasource = dashboardTableHelper.datasource;
-      
-      self.addGroupValue = function () {
-          dashboardChartHelper.addGroupValue();
-      };
-      
-      self.removeGroupValue = function () {
-          dashboardChartHelper.removeGroupValue();
-      };
-      
-      self.navigateToAccounts = function() {
-          self.router = oj.Router.rootInstance;
-          self.router.go('accounts');       
-      };
       
       // Below are a subset of the ViewModel methods invoked by the ojModule binding
       // Please reference the ojModule jsDoc for additionaly available methods.
@@ -94,6 +73,6 @@ define(['ojs/ojcore', 'knockout', 'viewModels/helpers/dashboardChartHelper', 'vi
      * each time the view is displayed.  Return an instance of the ViewModel if
      * only one instance of the ViewModel is needed.
      */
-    return new DashboardViewModel();
+    return new AccountsViewModel();
   }
 );
